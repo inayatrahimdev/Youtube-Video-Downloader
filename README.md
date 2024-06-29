@@ -15,7 +15,7 @@ The **YouTube Video Downloader** is a Python application that allows users to do
 
 ## Screenshot
 
-![App Screenshot](yotube.png)
+![App Screenshot](youtube.png)
 
 ## Prerequisites
 
