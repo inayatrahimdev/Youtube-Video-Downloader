@@ -35,14 +35,14 @@ pip install pytube tkinter
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/inayatrahimdev/youtube-video_downloader.git
-    cd youtube-video_downloader
+    git clone https://github.com/inayatrahimdev/Youtube-Video-Downloader.git
+    cd Youtube-Video-Downloader
     ```
 
 2. **Run the application:**
 
     ```sh
-    python youtube_downloader.py
+    python youtubevideo.py
     ```
 
 3. **Download a video:**
