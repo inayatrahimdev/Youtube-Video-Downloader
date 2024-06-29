@@ -1,6 +1,6 @@
 # YouTube Video Downloader
 
-![youtube_video_downloader](youtube_video_downloader.png)
+![Downloader](Downloader.png)
 
 ## Overview
 
