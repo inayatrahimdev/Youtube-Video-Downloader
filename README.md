@@ -1,6 +1,10 @@
+# YouTube Video Downloader
+
+![YouTube Video Downloader](youtube_video_downloader.png)
+
 ## Overview
 
-The **YouTube Video Downloader** is a Python application that allows users to download YouTube videos seamlessly through a user-friendly graphical interface. Built using the \`pytube\` library, this tool ensures quick and easy video downloads directly to your local machine.
+The **YouTube Video Downloader** is a Python application that allows users to download YouTube videos seamlessly through a user-friendly graphical interface. Built using the `pytube` library, this tool ensures quick and easy video downloads directly to your local machine.
 
 ## Features
 
@@ -22,24 +26,24 @@ Ensure you have the following installed:
 
 Install the required Python libraries using pip:
 
-\`\`\`sh
+```sh
 pip install pytube tkinter
-\`\`\`
+```
 
 ## Usage
 
 1. **Clone the repository:**
 
-    \`\`\`sh
-    git clone https://github.com/your-username/YouTube-Video-Downloader.git
+    ```sh
+    git clone https://github.com/inayatrahimdev/youtube-video_downloader.git
     cd youtube-video_downloader
-    \`\`\`
+    ```
 
 2. **Run the application:**
 
-    \`\`\`sh
+    ```sh
     python youtube_downloader.py
-    \`\`\`
+    ```
 
 3. **Download a video:**
 
@@ -55,7 +59,7 @@ pip install pytube tkinter
 - **Download Video**: Validates and downloads the video from the provided URL.
 - **GUI**: Built using Tkinter to provide a simple interface for users.
 
-\`\`\`python
+```python
 from pytube import YouTube
 import re
 import tkinter as tk
@@ -66,47 +70,47 @@ def download_video(url, output_path='./'):
         video_id_match = re.match(r'(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)', url)
         if video_id_match:
             video_id = video_id_match.group(1)
-            yt = YouTube(f\"https://www.youtube.com/watch?v={video_id}\")
+            yt = YouTube(f"https://www.youtube.com/watch?v={video_id}")
             video = yt.streams.filter(file_extension='mp4').first()
             if video:
                 video.download(output_path)
-                return f\"Downloaded: {yt.title}\"
+                return f"Downloaded: {yt.title}"
             else:
-                return \"No MP4 video format available for download.\"
+                return "No MP4 video format available for download."
         else:
-            return \"Invalid YouTube URL format. Please provide a valid URL.\"
+            return "Invalid YouTube URL format. Please provide a valid URL."
     except Exception as e:
-        return f\"Error downloading video: {str(e)}\"
+        return f"Error downloading video: {str(e)}"
 
 def download_button_action():
     url = url_entry.get()
     output_path = filedialog.askdirectory()
     if output_path:
         result = download_video(url, output_path)
-        messagebox.showinfo(\"Download Status\", result)
+        messagebox.showinfo("Download Status", result)
 
 def main():
     root = tk.Tk()
-    root.title(\"YouTube Video Downloader\")
+    root.title("YouTube Video Downloader")
     root.state('zoomed')
     
     frame = tk.Frame(root)
     frame.pack(expand=True, fill=tk.BOTH, padx=20, pady=20)
     
-    tk.Label(frame, text=\"YouTube Video URL:\", font=('Helvetica', 18)).pack(pady=10)
+    tk.Label(frame, text="YouTube Video URL:", font=('Helvetica', 18)).pack(pady=10)
     
     global url_entry
     url_entry = tk.Entry(frame, width=50, font=('Helvetica', 16))
     url_entry.pack(pady=5)
     
-    download_button = tk.Button(frame, text=\"Download\", command=download_button_action, font=('Helvetica', 16))
+    download_button = tk.Button(frame, text="Download", command=download_button_action, font=('Helvetica', 16))
     download_button.pack(pady=20)
     
     root.mainloop()
 
-if __name__ == \"__main__\":
+if __name__ == "__main__":
     main()
-\`\`\`
+```
 
 ## Contribution
 
@@ -119,4 +123,3 @@ This project is licensed under the MIT License.
 ## Contact
 
 For any inquiries or feedback, please reach out to [inayatrahim006@gmail.com](mailto:inayatrahim006@gmail.com).
-" > README.md
